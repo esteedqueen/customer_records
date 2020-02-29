@@ -2,7 +2,7 @@
 This script does the following:
   - retrieves customer records from an `input.txt` file,
   - calculates the distance between the GPS coordinates of each customer and the GPS coordinates of the event venue/destination,
-  - then returns a list of only the customers that are within 100km of the event venue/destination
+  - then returns a list of only the customers that are within 100km of the event venue/destination in `output.txt` file
 
 # Prerequisites
 You can run the script locally or on a server that has Ruby installed:
