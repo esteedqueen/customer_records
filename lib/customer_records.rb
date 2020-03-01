@@ -43,13 +43,9 @@ class CustomerRecords
     calculate_distance_from_destination_for_all
 
     invitable_customers = find_by(distance_within: 100)
-    invitable_customers = invitable_customers.map do |hash|
+    invitable_customers.map do |hash|
       hash.select { |key| key.match(/name|user_id/) }
     end
-  end
-
-  def retrieve_invitable
-    File.open("output.txt", "w") { |file| file.puts invitable_customers }
   end
 
   private
@@ -75,7 +71,7 @@ class CustomerRecords
     valid = %w[name user_id latitude longitude].all? { |k| customer.key? k }
 
     unless valid
-      raise ArgumentError, 'Customer record must be a valid hash - see input.txt as sample'
+      raise ArgumentError, 'Input is invalid - see input.txt as sample'
     end
 
     valid

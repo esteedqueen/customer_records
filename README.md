@@ -16,7 +16,7 @@ Clone the repo and `cd` to the working directory
 ```bash
 git clone git@github.com:esteedqueen/customer_records.git
 
-cd customer-records
+cd customer_records
 ```
 
 # Running the script

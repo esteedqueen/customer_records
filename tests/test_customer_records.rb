@@ -15,18 +15,6 @@ class TestCustomerRecords < Test::Unit::TestCase
     end
   end
 
-  def test_invitable_customers
-    invitable_customers = customer_records.invitable_customers
-    assert_equal(expected_invitable_customers, invitable_customers)
-
-    assert_raise ArgumentError do
-      CustomerRecords.new(
-        records_file: 'test/fixtures/records.txt',
-        destination: nil
-      ).invitable_customers
-    end
-  end
-
   def test_calculate_distance_from_destination
     customers = customer_records.calculate_distance_from_destination_for_all
     assert_equal(expected_customers_with_distance, customers)
@@ -43,6 +31,18 @@ class TestCustomerRecords < Test::Unit::TestCase
         records_file: 'tests/fixtures/records.txt',
         destination: nil
       ).calculate_distance_from_destination_for_all
+    end
+  end
+
+  def test_invitable_customers
+    invitable_customers = customer_records.invitable_customers
+    assert_equal(expected_invitable_customers, invitable_customers)
+
+    assert_raise ArgumentError do
+      CustomerRecords.new(
+        records_file: 'test/fixtures/records.txt',
+        destination: nil
+      ).invitable_customers
     end
   end
 
